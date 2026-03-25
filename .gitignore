@@ -3,3 +3,28 @@ dist/
 .env
 *.log
 .DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+build/
+develop-eggs/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.whl
+.venv/
+venv/
+
+# Node
+*.tsbuildinfo
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "anima-toolkit-langchain"
+version = "0.1.0"
+description = "Anima tools for LangChain"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "anima-labs>=0.1.0",
+    "langchain-core>=0.2.0",
+]
+
+[project.urls]
+Homepage = "https://docs.anima.email"
+Repository = "https://github.com/anima-labs-ai/toolkit"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anima_toolkit_langchain"]
