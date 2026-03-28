@@ -1,0 +1,30 @@
+{
+  "name": "@anima-labs/opencode-plugin",
+  "version": "0.1.0",
+  "description": "Anima plugin for OpenCode — agent identity tools (email, cards, vault, phone, address)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anima-labs-ai/toolkit.git",
+    "directory": "opencode"
+  },
+  "keywords": [
+    "anima", "opencode", "ai-agent", "email",
+    "virtual-cards", "vault", "phone", "sms", "plugin"
+  ],
+  "dependencies": {
+    "@anima-labs/sdk": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "zod": "^3.23.0"
+  }
+}
