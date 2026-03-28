@@ -1,8 +1,6 @@
 # Anima Toolkit
 
-Framework integrations for [Anima](https://docs.anima.email) with popular AI agent SDKs.
-
-Give your AI agents the ability to send emails, manage inboxes, create virtual cards, and more — using the framework you already work with.
+Framework integrations for [Anima](https://docs.anima.email) — the AI agent identity platform. Give your agents real-world identity: email, virtual cards, phone/SMS, credential vault, and addresses.
 
 ## Available Integrations
 
@@ -13,12 +11,27 @@ Give your AI agents the ability to send emails, manage inboxes, create virtual c
 | [anima-toolkit-openai](./python/openai-agents/) | OpenAI Agents SDK | `pip install anima-toolkit-openai` |
 | [anima-toolkit-langchain](./python/langchain/) | LangChain | `pip install anima-toolkit-langchain` |
 
-### Node.js
+### Node.js / TypeScript
 
 | Package | Framework | Install |
 |---------|-----------|---------|
 | [@anima-labs/toolkit-vercel-ai](./node/vercel-ai/) | Vercel AI SDK | `npm install @anima-labs/toolkit-vercel-ai` |
-| [MCP Server](./node/mcp/) | Model Context Protocol | See [anima-labs-ai/mcp](https://github.com/anima-labs-ai/mcp) |
+| [@anima-labs/toolkit-codex](./codex/) | OpenAI Codex / Function Calling | `npm install @anima-labs/toolkit-codex` |
+| [@anima-labs/opencode-plugin](./opencode/) | OpenCode | `npm install @anima-labs/opencode-plugin` |
+
+### Agent Platforms
+
+| Integration | Platform | Setup |
+|------------|----------|-------|
+| [SKILL.md](./openclaw/) | OpenClaw | Copy `SKILL.md` to skills directory |
+| [Cowork](./cowork/) | Claude Cowork | MCP config (deferred — API not yet public) |
+
+### Protocol
+
+| Package | Protocol | Details |
+|---------|----------|---------|
+| [@anima-labs/mcp](https://github.com/anima-labs-ai/mcp) | Model Context Protocol | 133+ tools, stdio + HTTP transports |
+| [SKILL.md](https://github.com/anima-labs-ai/skill) | Claude Code Skill | Native Claude Code integration |
 
 ## Quick Example
 
@@ -45,18 +58,40 @@ const result = await generateText({
 });
 ```
 
-## Available Tools
+## Unified Tool Surface (23 tools)
 
-All integrations expose the same core set of Anima tools:
+All integrations expose the same capabilities across the full Anima platform:
 
-- **send_email** — Send an email from an agent inbox
-- **list_messages** — List messages in an inbox
-- **get_message** — Get a specific message by ID
-- **create_agent** — Create a new Anima agent with an inbox
-- **list_agents** — List existing agents
-- **create_card** — Create a virtual card for payments
-- **list_cards** — List virtual cards
-- **search_messages** — Search messages across inboxes
+### Agent Management
+- `create_agent` — Create a new AI agent with email identity
+- `list_agents` — List existing agents
+
+### Email
+- `send_email` — Send an email from an agent inbox
+- `list_messages` — List messages in an inbox
+- `search_messages` — Search messages across inboxes
+
+### Virtual Cards
+- `create_card` — Create a virtual card with spending limits
+- `list_cards` — List virtual cards
+- `freeze_card` / `unfreeze_card` — Toggle card status
+- `list_transactions` — View card transactions
+
+### Credential Vault
+- `provision_vault` — Set up encrypted storage
+- `store_credential` — Save logins, API keys, secrets
+- `get_credential` / `list_credentials` — Retrieve credentials
+- `generate_password` — Create strong random passwords
+
+### Phone / SMS
+- `provision_phone` — Get a phone number for an agent
+- `send_sms` — Send SMS messages
+- `list_phones` — List provisioned numbers
+
+### Addresses
+- `create_address` — Create billing/shipping/mailing addresses
+- `list_addresses` — List agent addresses
+- `validate_address` — Validate via USPS/provider
 
 ## Documentation
 
