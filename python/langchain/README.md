@@ -58,4 +58,4 @@ export ANIMA_API_KEY=sk-...
 
 ## Documentation
 
-See [docs.anima.email](https://docs.anima.email) for the full API reference.
+See [docs.useanima.sh](https://docs.useanima.sh) for the full API reference.

@@ -39,6 +39,6 @@ export ANIMA_API_KEY=ak_...
 
 ## Links
 
-- [Anima Documentation](https://docs.anima.email)
+- [Anima Documentation](https://docs.useanima.sh)
 - [OpenCode](https://github.com/opencode-ai/opencode)
 - [MCP Server](https://github.com/anima-labs-ai/mcp)

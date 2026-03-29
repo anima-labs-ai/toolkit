@@ -51,7 +51,7 @@ Give your OpenClaw agents real-world identity: email addresses, virtual debit ca
 
 ## Setup
 
-1. Get an API key at [console.anima.email](https://console.anima.email)
+1. Get an API key at [console.useanima.sh](https://console.useanima.sh)
 2. Set `ANIMA_API_KEY` in your environment
 3. The MCP server starts automatically when needed
 
@@ -127,7 +127,7 @@ get_credential when needed → generate_password for new accounts
 
 ## Links
 
-- [Documentation](https://docs.anima.email)
-- [Console](https://console.anima.email)
+- [Documentation](https://docs.useanima.sh)
+- [Console](https://console.useanima.sh)
 - [GitHub](https://github.com/anima-labs-ai)
 - [MCP Server](https://github.com/anima-labs-ai/mcp)

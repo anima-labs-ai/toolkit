@@ -40,11 +40,11 @@ A multi-agent Cowork session where:
 
 We're tracking Cowork's public API availability. When ready:
 - MCP config template will work out of the box
-- Full documentation will be published at docs.anima.email
+- Full documentation will be published at docs.useanima.sh
 - Example Cowork sessions will be added to the examples repo
 
 ## Links
 
 - [Claude Cowork](https://claude.ai/cowork)
 - [Anima MCP Server](https://github.com/anima-labs-ai/mcp)
-- [Anima Documentation](https://docs.anima.email)
+- [Anima Documentation](https://docs.useanima.sh)

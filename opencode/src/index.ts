@@ -53,7 +53,7 @@ export const animaPlugin: Plugin = async (ctx) => {
 					body: tool.schema.string().describe("Email body (plain text or HTML)"),
 				},
 				async execute(args) {
-					const result = await anima.emails.send({
+					const result = await useanima.shs.send({
 						agentId: args.agent_id,
 						to: args.to.split(",").map((e) => e.trim()),
 						subject: args.subject,

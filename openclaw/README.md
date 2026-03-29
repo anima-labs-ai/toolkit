@@ -37,6 +37,6 @@ The MCP server (`@anima-labs/mcp`) will be started automatically by OpenClaw whe
 
 ## Links
 
-- [Anima Documentation](https://docs.anima.email)
+- [Anima Documentation](https://docs.useanima.sh)
 - [MCP Server](https://github.com/anima-labs-ai/mcp)
 - [Full Skill Reference](https://github.com/anima-labs-ai/skill)

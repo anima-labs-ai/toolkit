@@ -1,6 +1,6 @@
 # Anima Toolkit
 
-Framework integrations for [Anima](https://docs.anima.email) — the AI agent identity platform. Give your agents real-world identity: email, virtual cards, phone/SMS, credential vault, and addresses.
+Framework integrations for [Anima](https://docs.useanima.sh) — the AI agent identity platform. Give your agents real-world identity: email, virtual cards, phone/SMS, credential vault, and addresses.
 
 ## Available Integrations
 
@@ -95,7 +95,7 @@ All integrations expose the same capabilities across the full Anima platform:
 
 ## Documentation
 
-Full API reference and guides at **[docs.anima.email](https://docs.anima.email)**.
+Full API reference and guides at **[docs.useanima.sh](https://docs.useanima.sh)**.
 
 ## License
 

@@ -51,4 +51,4 @@ The MCP server exposes the same tools as other Anima integrations:
 
 ## Documentation
 
-See [docs.anima.email](https://docs.anima.email) for the full API reference.
+See [docs.useanima.sh](https://docs.useanima.sh) for the full API reference.

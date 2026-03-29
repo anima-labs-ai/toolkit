@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://docs.anima.email"
+Homepage = "https://docs.useanima.sh"
 Repository = "https://github.com/anima-labs-ai/toolkit"
 
 [tool.hatch.build.targets.wheel]
