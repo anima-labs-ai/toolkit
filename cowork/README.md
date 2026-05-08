@@ -6,9 +6,9 @@
 
 When Claude Cowork's multi-agent collaboration API becomes available, Anima will provide:
 
-- **MCP server connection** from Cowork workspaces — any agent in a Cowork session can provision emails, cards, phones, and store credentials
+- **MCP server connection** from Cowork workspaces — any agent in a Cowork session can provision emails, phones, and store credentials
 - **Shared agent identity** — agents in a Cowork session share the same Anima organization
-- **Full unified surface** — email, phone, cards, vault, address via natural language
+- **Full unified surface** — email, phone, vault, address via natural language
 
 ## Planned Configuration
 
@@ -32,8 +32,8 @@ When Claude Cowork's multi-agent collaboration API becomes available, Anima will
 
 A multi-agent Cowork session where:
 1. **Research Agent** searches for products via email
-2. **Purchasing Agent** creates a virtual card with spending limits
-3. **Finance Agent** stores receipts in vault and reconciles transactions
+2. **Coordination Agent** stores credentials and coordinates communications
+3. **Finance Agent** stores receipts in vault
 4. All agents share the same Anima organization identity
 
 ## Monitoring

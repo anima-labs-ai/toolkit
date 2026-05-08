@@ -1,6 +1,6 @@
 # anima-toolkit-langchain
 
-Anima tools for [LangChain](https://python.langchain.com/). Provides LangChain `BaseTool` implementations that wrap the Anima SDK for email, agents, and virtual cards.
+Anima tools for [LangChain](https://python.langchain.com/). Provides LangChain `BaseTool` implementations that wrap the Anima SDK for email and agents.
 
 ## Installation
 
@@ -45,8 +45,6 @@ print(result["output"])
 | `SearchMessagesTool` | Search messages in an inbox |
 | `CreateAgentTool` | Create a new agent with an email inbox |
 | `ListAgentsTool` | List existing agents |
-| `CreateCardTool` | Create a virtual card |
-| `ListCardsTool` | List virtual cards |
 
 ## Configuration
 

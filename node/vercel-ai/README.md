@@ -1,6 +1,6 @@
 # @anima-labs/toolkit-vercel-ai
 
-Anima tools for the [Vercel AI SDK](https://sdk.vercel.ai/). Provides tool definitions compatible with Vercel AI's `tool()` API for email, agents, and virtual cards.
+Anima tools for the [Vercel AI SDK](https://sdk.vercel.ai/). Provides tool definitions compatible with Vercel AI's `tool()` API for email and agents.
 
 ## Installation
 
@@ -35,8 +35,6 @@ console.log(result.text);
 | `search_messages` | Search messages in an inbox |
 | `create_agent` | Create a new agent with an email inbox |
 | `list_agents` | List existing agents |
-| `create_card` | Create a virtual card |
-| `list_cards` | List virtual cards |
 
 ## Configuration
 

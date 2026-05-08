@@ -155,101 +155,6 @@ def list_agents(
     ]
 
 
-@function_tool
-def create_card(
-    agent_id: str,
-    amount_cents: int,
-    api_key: Optional[str] = None,
-) -> dict:
-    """Create a virtual card for an agent.
-
-    Args:
-        agent_id: The agent to create the card for.
-        amount_cents: Funding amount in cents (e.g. 1000 = $10.00).
-    """
-    client = _get_client(api_key)
-    card = client.cards.create(agent_id=agent_id, amount_cents=amount_cents)
-    return {
-        "id": card.id,
-        "last4": card.last4,
-        "amount_cents": card.amount_cents,
-        "status": card.status,
-    }
-
-
-@function_tool
-def list_cards(
-    agent_id: str,
-    api_key: Optional[str] = None,
-) -> list[dict]:
-    """List virtual cards for an agent.
-
-    Args:
-        agent_id: The agent whose cards to list.
-    """
-    client = _get_client(api_key)
-    cards = client.cards.list(agent_id=agent_id)
-    return [
-        {"id": c.id, "last4": c.last4, "status": c.status}
-        for c in cards.data
-    ]
-
-
-# ---------------------------------------------------------------------------
-# Card Management (expanded)
-# ---------------------------------------------------------------------------
-
-
-@function_tool
-def freeze_card(card_id: str, api_key: Optional[str] = None) -> str:
-    """Freeze a virtual card to temporarily block all transactions.
-
-    Args:
-        card_id: The card ID to freeze.
-    """
-    client = _get_client(api_key)
-    client.cards.freeze(card_id=card_id)
-    return f"Card {card_id} frozen"
-
-
-@function_tool
-def unfreeze_card(card_id: str, api_key: Optional[str] = None) -> str:
-    """Unfreeze a card to re-enable transactions.
-
-    Args:
-        card_id: The card ID to unfreeze.
-    """
-    client = _get_client(api_key)
-    client.cards.unfreeze(card_id=card_id)
-    return f"Card {card_id} unfrozen"
-
-
-@function_tool
-def list_transactions(
-    card_id: str,
-    limit: int = 20,
-    api_key: Optional[str] = None,
-) -> list[dict]:
-    """List transactions on a virtual card.
-
-    Args:
-        card_id: The card ID to list transactions for.
-        limit: Max number of transactions to return.
-    """
-    client = _get_client(api_key)
-    txns = client.cards.list_transactions(card_id=card_id, limit=limit)
-    return [
-        {
-            "id": t.id,
-            "amount": t.amount,
-            "merchant": t.merchant_name,
-            "status": t.status,
-            "date": t.created_at,
-        }
-        for t in txns.data
-    ]
-
-
 # ---------------------------------------------------------------------------
 # Vault / Credential Management
 # ---------------------------------------------------------------------------
@@ -522,12 +427,6 @@ ALL_TOOLS = [
     # Agent
     create_agent,
     list_agents,
-    # Cards
-    create_card,
-    list_cards,
-    freeze_card,
-    unfreeze_card,
-    list_transactions,
     # Vault
     provision_vault,
     store_credential,

@@ -46,8 +46,6 @@ The MCP server exposes the same tools as other Anima integrations:
 - `search_messages` — Search messages in an inbox
 - `create_agent` — Create a new agent with an email inbox
 - `list_agents` — List existing agents
-- `create_card` — Create a virtual card
-- `list_cards` — List virtual cards
 
 ## Documentation
 

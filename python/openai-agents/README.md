@@ -1,6 +1,6 @@
 # anima-toolkit-openai
 
-Anima tools for the [OpenAI Agents SDK](https://github.com/openai/openai-agents-python). Gives your agents the ability to send emails, manage inboxes, create virtual cards, and search messages.
+Anima tools for the [OpenAI Agents SDK](https://github.com/openai/openai-agents-python). Gives your agents the ability to send emails, manage inboxes, and search messages.
 
 ## Installation
 
@@ -37,8 +37,6 @@ print(result.final_output)
 | `search_messages` | Search messages in an inbox |
 | `create_agent` | Create a new agent with an email inbox |
 | `list_agents` | List existing agents |
-| `create_card` | Create a virtual card |
-| `list_cards` | List virtual cards |
 
 ## Configuration
 

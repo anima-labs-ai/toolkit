@@ -143,103 +143,6 @@ class ListAgentsTool(BaseTool):
         ]
 
 
-class CreateCardInput(BaseModel):
-    agent_id: str = Field(description="The agent to create the card for")
-    amount_cents: int = Field(
-        description="Funding amount in cents (e.g. 1000 = $10.00)"
-    )
-
-
-class CreateCardTool(BaseTool):
-    name: str = "create_card"
-    description: str = "Create a virtual card for an agent"
-    args_schema: Type[BaseModel] = CreateCardInput
-
-    def _run(self, agent_id: str, amount_cents: int) -> dict:
-        client = _get_client()
-        card = client.cards.create(agent_id=agent_id, amount_cents=amount_cents)
-        return {
-            "id": card.id,
-            "last4": card.last4,
-            "amount_cents": card.amount_cents,
-            "status": card.status,
-        }
-
-
-class ListCardsInput(BaseModel):
-    agent_id: str = Field(description="The agent whose cards to list")
-
-
-class ListCardsTool(BaseTool):
-    name: str = "list_cards"
-    description: str = "List virtual cards for an agent"
-    args_schema: Type[BaseModel] = ListCardsInput
-
-    def _run(self, agent_id: str) -> list[dict]:
-        client = _get_client()
-        cards = client.cards.list(agent_id=agent_id)
-        return [
-            {"id": c.id, "last4": c.last4, "status": c.status}
-            for c in cards.data
-        ]
-
-
-# ---------------------------------------------------------------------------
-# Card Management (expanded)
-# ---------------------------------------------------------------------------
-
-
-class FreezeCardInput(BaseModel):
-    card_id: str = Field(description="The card ID to freeze")
-
-
-class FreezeCardTool(BaseTool):
-    name: str = "freeze_card"
-    description: str = "Freeze a virtual card to temporarily block all transactions"
-    args_schema: Type[BaseModel] = FreezeCardInput
-
-    def _run(self, card_id: str) -> str:
-        client = _get_client()
-        client.cards.freeze(card_id=card_id)
-        return f"Card {card_id} frozen"
-
-
-class UnfreezeCardTool(BaseTool):
-    name: str = "unfreeze_card"
-    description: str = "Unfreeze a card to re-enable transactions"
-    args_schema: Type[BaseModel] = FreezeCardInput
-
-    def _run(self, card_id: str) -> str:
-        client = _get_client()
-        client.cards.unfreeze(card_id=card_id)
-        return f"Card {card_id} unfrozen"
-
-
-class ListTransactionsInput(BaseModel):
-    card_id: str = Field(description="The card ID to list transactions for")
-    limit: int = Field(default=20, description="Max number of transactions")
-
-
-class ListTransactionsTool(BaseTool):
-    name: str = "list_transactions"
-    description: str = "List transactions on a virtual card"
-    args_schema: Type[BaseModel] = ListTransactionsInput
-
-    def _run(self, card_id: str, limit: int = 20) -> list[dict]:
-        client = _get_client()
-        txns = client.cards.list_transactions(card_id=card_id, limit=limit)
-        return [
-            {
-                "id": t.id,
-                "amount": t.amount,
-                "merchant": t.merchant_name,
-                "status": t.status,
-                "date": t.created_at,
-            }
-            for t in txns.data
-        ]
-
-
 # ---------------------------------------------------------------------------
 # Vault / Credential Management
 # ---------------------------------------------------------------------------
@@ -497,12 +400,6 @@ ALL_TOOLS = [
     # Agent
     CreateAgentTool,
     ListAgentsTool,
-    # Cards
-    CreateCardTool,
-    ListCardsTool,
-    FreezeCardTool,
-    UnfreezeCardTool,
-    ListTransactionsTool,
     # Vault
     ProvisionVaultTool,
     StoreCredentialTool,

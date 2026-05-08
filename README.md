@@ -1,6 +1,6 @@
 # Anima Toolkit
 
-Framework integrations for [Anima](https://docs.useanima.sh) — the AI agent identity platform. Give your agents real-world identity: email, virtual cards, phone/SMS, credential vault, and addresses.
+Framework integrations for [Anima](https://docs.useanima.sh) — the AI agent identity platform. Give your agents real-world identity: email, phone/SMS, credential vault, and addresses.
 
 ## Available Integrations
 
@@ -58,7 +58,7 @@ const result = await generateText({
 });
 ```
 
-## Unified Tool Surface (23 tools)
+## Unified Tool Surface
 
 All integrations expose the same capabilities across the full Anima platform:
 
@@ -70,12 +70,6 @@ All integrations expose the same capabilities across the full Anima platform:
 - `send_email` — Send an email from an agent inbox
 - `list_messages` — List messages in an inbox
 - `search_messages` — Search messages across inboxes
-
-### Virtual Cards
-- `create_card` — Create a virtual card with spending limits
-- `list_cards` — List virtual cards
-- `freeze_card` / `unfreeze_card` — Toggle card status
-- `list_transactions` — View card transactions
 
 ### Credential Vault
 - `provision_vault` — Set up encrypted storage

@@ -1,6 +1,6 @@
 # Anima for OpenClaw
 
-Give your [OpenClaw](https://github.com/openclaw/openclaw) agents real-world identity with Anima — email, virtual cards, phone numbers, credential vault, and addresses.
+Give your [OpenClaw](https://github.com/openclaw/openclaw) agents real-world identity with Anima — email, phone numbers, credential vault, and addresses.
 
 ## Installation
 
@@ -29,11 +29,10 @@ The MCP server (`@anima-labs/mcp`) will be started automatically by OpenClaw whe
 | Capability | Example |
 |-----------|---------|
 | **Email** | Send messages, monitor inbox, search emails |
-| **Cards** | Create virtual cards with spending limits, freeze after use |
 | **Vault** | Store CRM logins, API keys, generate passwords |
 | **Phone** | Provision numbers, send SMS |
 | **Address** | Create billing/shipping addresses, validate via USPS |
-| **Browser** | Auto-fill checkout forms, execute payments |
+| **Browser** | Auto-fill forms |
 
 ## Links
 

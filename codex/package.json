@@ -1,7 +1,7 @@
 {
   "name": "@anima-labs/toolkit-codex",
   "version": "0.1.0",
-  "description": "Anima tools for OpenAI Codex — full unified surface (email, cards, vault, phone, address)",
+  "description": "Anima tools for OpenAI Codex — full unified surface (email, vault, phone, address)",
   "license": "MIT",
   "type": "module",
   "main": "./src/index.ts",
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "anima", "codex", "openai", "ai-agent", "email",
-    "virtual-cards", "vault", "phone", "sms", "tools"
+    "vault", "phone", "sms", "tools"
   ],
   "dependencies": {
     "@anima-labs/sdk": "^0.1.0"

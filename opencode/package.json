@@ -1,7 +1,7 @@
 {
   "name": "@anima-labs/opencode-plugin",
   "version": "0.1.0",
-  "description": "Anima plugin for OpenCode — agent identity tools (email, cards, vault, phone, address)",
+  "description": "Anima plugin for OpenCode — agent identity tools (email, vault, phone, address)",
   "license": "MIT",
   "type": "module",
   "main": "./src/index.ts",
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "anima", "opencode", "ai-agent", "email",
-    "virtual-cards", "vault", "phone", "sms", "plugin"
+    "vault", "phone", "sms", "plugin"
   ],
   "dependencies": {
     "@anima-labs/sdk": "^0.1.0"

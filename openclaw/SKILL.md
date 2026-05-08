@@ -1,6 +1,6 @@
 ---
 name: anima
-description: "Anima AI agent identity platform: email, virtual cards, phone/SMS, credential vault, addresses, webhooks. Use when: (1) sending or reading emails for agents, (2) creating virtual cards for purchases, (3) storing or retrieving credentials, (4) provisioning phone numbers or sending SMS, (5) managing agent addresses. NOT for: general web browsing (use browser tools), non-agent identity tasks, or direct payment processing outside Anima."
+description: "Anima AI agent identity platform: email, phone/SMS, credential vault, addresses, webhooks. Use when: (1) sending or reading emails for agents, (2) storing or retrieving credentials, (3) provisioning phone numbers or sending SMS, (4) managing agent addresses. NOT for: general web browsing (use browser tools), non-agent identity tasks."
 metadata:
   {
     "openclaw":
@@ -29,25 +29,22 @@ metadata:
 
 # Anima — Agent Identity Platform
 
-Give your OpenClaw agents real-world identity: email addresses, virtual debit cards, phone numbers, encrypted credential storage, and validated addresses.
+Give your OpenClaw agents real-world identity: email addresses, phone numbers, encrypted credential storage, and validated addresses.
 
 ## When to Use
 
-✅ **USE this skill when:**
+USE this skill when:
 
 - Sending or receiving emails from an AI agent
-- Creating virtual cards with spending limits for purchases
 - Storing or retrieving login credentials, API keys, or secrets
 - Provisioning phone numbers or sending SMS
 - Creating and validating billing/shipping addresses
 - Managing webhooks for real-time event notifications
-- Automating browser checkout with card + address auto-fill
 
-❌ **DO NOT use for:**
+DO NOT use for:
 
 - General web browsing (use browser tools)
 - Tasks unrelated to agent identity or communication
-- Direct payment processing outside the Anima platform
 
 ## Setup
 
@@ -55,7 +52,7 @@ Give your OpenClaw agents real-world identity: email addresses, virtual debit ca
 2. Set `ANIMA_API_KEY` in your environment
 3. The MCP server starts automatically when needed
 
-## Available Tools (133+)
+## Available Tools
 
 ### Agent Management
 - `create_agent` — Create a new agent with email identity
@@ -63,46 +60,35 @@ Give your OpenClaw agents real-world identity: email addresses, virtual debit ca
 - `get_agent` — Get agent details
 - `delete_agent` — Remove an agent
 
-### Email (24 tools)
+### Email
 - `send_email` — Send an email from an agent
 - `list_messages` / `get_message` — Read inbox messages
 - `search_messages` — Full-text and semantic search
 - Plus: domains, contacts, spam management, signatures
 
-### Virtual Cards (18 tools)
-- `create_card` — Issue a virtual card with spending limits
-- `freeze_card` / `unfreeze_card` — Toggle card status
-- `list_transactions` — View card transactions
-- Plus: spending policies, approval workflows, auto-approve rules
-
-### Credential Vault (10 tools)
+### Credential Vault
 - `provision_vault` — Set up encrypted storage for an agent
-- `store_credential` — Save logins, API keys, cards, identities
+- `store_credential` — Save logins, API keys, identities
 - `get_credential` / `list_credentials` — Retrieve credentials
 - `generate_password` — Create strong random passwords
 - Plus: TOTP codes, search, sync
 
-### Phone & SMS (6 tools)
+### Phone & SMS
 - `provision_phone` — Get a phone number for an agent
 - `send_sms` — Send SMS messages
 - `list_phones` — List provisioned numbers
 
-### Addresses (6 tools)
+### Addresses
 - `create_address` — Create billing/shipping/mailing addresses
 - `validate_address` — Validate via USPS/provider
 - `list_addresses` — List agent addresses
 
-### Webhooks (7 tools)
+### Webhooks
 - `create_webhook` — Subscribe to real-time events
 - `webhook_test` — Test webhook delivery
 - `list_deliveries` — Inspect delivery logs
 
-### Browser Payments (4 tools)
-- `browser_detect_checkout` — Detect checkout forms
-- `browser_fill_card` / `browser_fill_address` — Auto-fill payment forms
-- `browser_pay_checkout` — Execute checkout
-
-### Security (5 tools)
+### Security
 - Content scanning, policy enforcement, event audit logs
 
 ## Example Workflows
@@ -112,14 +98,7 @@ Give your OpenClaw agents real-world identity: email addresses, virtual debit ca
 Create a new agent called "Assistant" → send_email to user@example.com
 ```
 
-### 2. Purchase something online
-```
-create_card with $50 limit → create_address (shipping) →
-browser_detect_checkout → browser_fill_card → browser_fill_address →
-browser_pay_checkout → freeze_card after purchase
-```
-
-### 3. Store and use credentials
+### 2. Store and use credentials
 ```
 provision_vault → store_credential (CRM login) →
 get_credential when needed → generate_password for new accounts

@@ -3,7 +3,7 @@
  *
  * Anima tool definitions for OpenAI Codex and any OpenAI-compatible
  * function-calling agent. Covers the full unified surface: email,
- * cards, vault, phone, and address.
+ * vault, phone, and address.
  */
 
 import type { ChatCompletionTool } from "openai/resources/chat/completions";
@@ -85,83 +85,6 @@ export const animaTools: ChatCompletionTool[] = [
 					limit: { type: "number", description: "Max results", default: 10 },
 				},
 				required: ["agent_id", "query"],
-			},
-		},
-	},
-
-	// --- Cards ---
-	{
-		type: "function",
-		function: {
-			name: "create_card",
-			description: "Create a virtual debit card for an agent with spending limits",
-			parameters: {
-				type: "object",
-				properties: {
-					agent_id: { type: "string", description: "Agent to create the card for" },
-					label: { type: "string", description: "Card label" },
-					currency: { type: "string", description: "Currency (usd)", default: "usd" },
-					spend_limit_daily: { type: "number", description: "Daily spend limit in cents" },
-					spend_limit_per_auth: { type: "number", description: "Per-transaction limit in cents" },
-				},
-				required: ["agent_id"],
-			},
-		},
-	},
-	{
-		type: "function",
-		function: {
-			name: "list_cards",
-			description: "List virtual cards for an agent",
-			parameters: {
-				type: "object",
-				properties: {
-					agent_id: { type: "string", description: "Agent whose cards to list" },
-				},
-				required: ["agent_id"],
-			},
-		},
-	},
-	{
-		type: "function",
-		function: {
-			name: "freeze_card",
-			description: "Freeze a virtual card to block transactions",
-			parameters: {
-				type: "object",
-				properties: {
-					card_id: { type: "string", description: "Card ID to freeze" },
-				},
-				required: ["card_id"],
-			},
-		},
-	},
-	{
-		type: "function",
-		function: {
-			name: "unfreeze_card",
-			description: "Unfreeze a card to re-enable transactions",
-			parameters: {
-				type: "object",
-				properties: {
-					card_id: { type: "string", description: "Card ID to unfreeze" },
-				},
-				required: ["card_id"],
-			},
-		},
-	},
-	{
-		type: "function",
-		function: {
-			name: "list_transactions",
-			description: "List transactions on a virtual card",
-			parameters: {
-				type: "object",
-				properties: {
-					card_id: { type: "string", description: "Card ID" },
-					limit: { type: "number", description: "Max transactions", default: 20 },
-				},
-				required: ["card_id"],
 			},
 		},
 	},

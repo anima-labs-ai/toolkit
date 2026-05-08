@@ -2,7 +2,7 @@
  * @anima-labs/opencode-plugin
  *
  * Anima plugin for OpenCode — gives agents real-world identity:
- * email, virtual cards, phone/SMS, credential vault, and addresses.
+ * email, phone/SMS, credential vault, and addresses.
  */
 
 import type { Plugin } from "@opencode-ai/plugin";
@@ -92,71 +92,6 @@ export const animaPlugin: Plugin = async (ctx) => {
 						limit: args.limit,
 					});
 					return JSON.stringify(results, null, 2);
-				},
-			}),
-
-			// --- Cards ---
-			create_card: tool({
-				description: "Create a virtual debit card for an agent with spending limits",
-				args: {
-					agent_id: tool.schema.string().describe("Agent to create the card for"),
-					label: tool.schema.string().optional().describe("Card label"),
-					spend_limit_daily: tool.schema.number().optional().describe("Daily spend limit in cents"),
-					spend_limit_per_auth: tool.schema.number().optional().describe("Per-transaction limit in cents"),
-				},
-				async execute(args) {
-					const card = await anima.cards.create({
-						agentId: args.agent_id,
-						label: args.label,
-						spendLimitDaily: args.spend_limit_daily,
-						spendLimitPerAuth: args.spend_limit_per_auth,
-					});
-					return JSON.stringify(card, null, 2);
-				},
-			}),
-
-			list_cards: tool({
-				description: "List virtual cards for an agent",
-				args: {
-					agent_id: tool.schema.string().describe("Agent whose cards to list"),
-				},
-				async execute(args) {
-					const cards = await anima.cards.list({ agentId: args.agent_id });
-					return JSON.stringify(cards, null, 2);
-				},
-			}),
-
-			freeze_card: tool({
-				description: "Freeze a virtual card to block transactions",
-				args: {
-					card_id: tool.schema.string().describe("Card ID to freeze"),
-				},
-				async execute(args) {
-					const result = await anima.cards.freeze(args.card_id);
-					return JSON.stringify(result, null, 2);
-				},
-			}),
-
-			unfreeze_card: tool({
-				description: "Unfreeze a card to re-enable transactions",
-				args: {
-					card_id: tool.schema.string().describe("Card ID to unfreeze"),
-				},
-				async execute(args) {
-					const result = await anima.cards.unfreeze(args.card_id);
-					return JSON.stringify(result, null, 2);
-				},
-			}),
-
-			list_transactions: tool({
-				description: "List transactions on a virtual card",
-				args: {
-					card_id: tool.schema.string().describe("Card ID"),
-					limit: tool.schema.number().optional().describe("Max transactions to return"),
-				},
-				async execute(args) {
-					const txns = await anima.cards.listTransactions(args.card_id, { limit: args.limit });
-					return JSON.stringify(txns, null, 2);
 				},
 			}),
 
